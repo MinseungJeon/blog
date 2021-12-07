@@ -1,5 +1,5 @@
 export default {
-  title: 'Boilerplate App',
+  title: 'Jeon Blog App',
   description: {
     en: '',
     ko: '',
