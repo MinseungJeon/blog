@@ -9,7 +9,7 @@ const Landing = () => {
   const intl = useIntl();
   return (
     <LandingWrapper>
-      <LandingTitle>{intl.messages['landing.title']}</LandingTitle>
+      <LandingTitle>JEON BLOG</LandingTitle>
       <Todo />
     </LandingWrapper>
   );
