@@ -3,7 +3,7 @@
 import React from 'react';
 import Head from 'next/head';
 import NProgress from 'nprogress';
-import Router from 'next/router';
+import Router, { useRouter } from 'next/router';
 import ReduxToastr from 'react-redux-toastr';
 import PropTypes from 'prop-types';
 import { Provider, useStore } from 'react-redux';
@@ -21,6 +21,7 @@ import UiUxContextProvider from 'src/contexts/UiUxContext';
 import RoutingContextProvider from 'src/contexts/RoutingContext';
 import wrapper from 'src/redux/store';
 import { GlobalStyles } from 'src/styles/styledComponents/globalStyled';
+import FireStoreDataLoader from 'src/components/shared/dataLoaders/firestore/Collections';
 
 // [Note]: extra configuration might be needed if
 //         some components aren't working properly for React Suite
@@ -41,6 +42,7 @@ Router.events.on('routeChangeError', () => NProgress.done());
 
 const App = ({ Component, pageProps }) => {
   const store = useStore();
+  const router = useRouter();
 
   const rrfProps = {
     firebase: firebaseApp,
@@ -62,6 +64,7 @@ const App = ({ Component, pageProps }) => {
       </Head>
       <Provider store={store}>
         <ReactReduxFirebaseProvider {...rrfProps}>
+          <FireStoreDataLoader route={router.asPath} />
           <RoutingContextProvider>
             <UiUxContextProvider>
               <ThemeHandler>

@@ -10,8 +10,8 @@ function Nav() {
         </Link>
       </li>
       <li>
-        <Link href="/about" passHref>
-          About
+        <Link href="/post" passHref>
+          글쓰기
         </Link>
       </li>
       <style>{`

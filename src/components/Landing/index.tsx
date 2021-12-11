@@ -1,7 +1,9 @@
 import React from 'react';
 import { useIntl } from 'react-intl';
 
-import Todo from './Todo';
+// import Todo from './Todo';
+// import Login from './Login';
+import List from './List';
 
 import { LandingTitle, LandingWrapper } from './styled';
 
@@ -9,8 +11,8 @@ const Landing = () => {
   const intl = useIntl();
   return (
     <LandingWrapper>
-      <LandingTitle>{intl.messages['landing.title']}</LandingTitle>
-      <Todo />
+      <LandingTitle>JEON BLOG</LandingTitle>
+      <List />
     </LandingWrapper>
   );
 };
